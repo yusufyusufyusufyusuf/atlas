@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Atlas design tokens */
+    --ink: 225 25% 12%;
+    --muted: 220 12% 48%;
+    --line: 220 16% 88%;
+    --canvas: 38 20% 96%;        /* warm off-white */
+    --canvas-alt: 36 22% 92%;
+    --white: 0 0% 100%;
+
+    /* Maroon/wine primary */
+    --primary: 337 62% 32%;      /* #8B1A4A */
+    --primary-hover: 337 62% 26%;
+    --primary-fg: 0 0% 100%;
+    --primary-light: 337 62% 96%;
+    --primary-border: 337 62% 82%;
+
+    --danger: 0 72% 51%;
+    --warning: 38 92% 48%;
+    --success: 142 55% 40%;
+    --auri: 267 72% 58%;
+
+    /* Logo orange */
+    --logo: 22 90% 52%;
+  }
+
+  * { @apply border-line box-border; }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased text-sm;
+    background-color: hsl(var(--canvas));
+    color: hsl(var(--ink));
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] { -moz-appearance: textfield; }
+}
+
+@layer utilities {
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+  .text-primary { color: hsl(var(--primary)); }
+  .bg-primary { background-color: hsl(var(--primary)); }
+  .border-primary { border-color: hsl(var(--primary)); }
+  .text-muted { color: hsl(var(--muted)); }
+  .bg-canvas { background-color: hsl(var(--canvas)); }
+  .bg-canvas-alt { background-color: hsl(var(--canvas-alt)); }
+  .bg-white { background-color: hsl(var(--white)); }
+  .border-line { border-color: hsl(var(--line)); }
+  .text-ink { color: hsl(var(--ink)); }
+}
